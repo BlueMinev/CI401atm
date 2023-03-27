@@ -16,6 +16,7 @@ public class Bank
     int numAccounts = 0;        // the number of accounts currently in the bank
     BankAccount[] accounts = new BankAccount[maxAccounts];  // array to hold the bank accounts
     BankAccount account = null; // currently logged in acccount ('null' if no-one is logged in)
+    private BankAccount currentAccount;
 
     // Constructor method - this provides a couple of example bank accounts to work with
     public Bank()
@@ -68,13 +69,18 @@ public class Bank
         // search the array to find a bank account with matching account and password.
         // If you find it, store it in the variable currentAccount and return true.
         // If you don't find it, reset everything and return false
-        
+        for (int i = 0; i < numAccounts; i++) {
+            if (accounts[i].accNumber == newAccNumber && accounts[i].accPasswd == newAccPasswd) {
+                currentAccount = accounts[i];
+                return true;
+            }
+        }
         // YOU NEED TO ADD CODE HERE TO FIND THE RIGHT ACCOUNT IN THE accounts ARRAY, 
         // SET THE account VARIABLE AND RETURN true
         
 
         // not found - return false
-        account = null;
+        currentAccount = null;
         return false;
     }
 

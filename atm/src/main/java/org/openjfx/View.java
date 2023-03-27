@@ -16,8 +16,8 @@ import javafx.util.*;
 
 class View
 {
-    int H = 420;         // Height of window pixels 
-    int W = 500;         // Width  of window pixels 
+    int H = 350;         // Height of window pixels 
+    int W = 250;         // Width  of window pixels 
 
     // variables for components of the user interface
     Label      title;         // Title area (not the window title)
@@ -81,7 +81,7 @@ class View
                 {"7",    "8",  "9",  "",  "Dep",  ""},
                 {"4",    "5",  "6",  "",  "W/D",  ""},
                 {"1",    "2",  "3",  "",  "Bal",  "Fin"},
-                {"CLR",  "0",  "",   "",  "",     "Ent"} };
+                {"CLR",  "0",  "",   "",  "", "Ent"} };
 
         // loop through the array, making a Button object for each label 
         // (and an empty text label for each blank space) and adding them to the buttonPane

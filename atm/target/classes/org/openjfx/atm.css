@@ -10,8 +10,13 @@
     -fx-pref-tile-width: 75;
     -fx-hgap: 5;
     -fx-vgap: 5;
+
+    
 }
 
 .button {
+
     -fx-font: bold 16pt "courier new";
+    -fx-background-color: #008CBA;
+    -fx-border: none;
 }

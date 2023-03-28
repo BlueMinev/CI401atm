@@ -104,7 +104,7 @@ class View
 
         // add the complete GUI to the window and display it
         Scene scene = new Scene(grid, W, H);   
-        scene.getStylesheets().add("atm.css"); // tell the app to use our css file
+        scene.getStylesheets().add(getClass().getResource("atm.css").toExternalForm()); // tell the app to use our css file
         window.setScene(scene);
         window.show();
     }

@@ -16,8 +16,8 @@ import javafx.util.*;
 
 class View
 {
-    int H = 350;         // Height of window pixels 
-    int W = 250;         // Width  of window pixels 
+    int H = 450;         // Height of window pixels 
+    int W = 500;         // Width  of window pixels 
 
     // variables for components of the user interface
     Label      title;         // Title area (not the window title)

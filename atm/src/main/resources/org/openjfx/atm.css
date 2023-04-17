@@ -16,7 +16,9 @@
 
 .button {
 
-    -fx-font: bold 16pt "courier new";
-    -fx-background-color: #008CBA;
+    -fx-font: bold 15pt "Roboto";
+    -fx-background-color: #98C1D9;
     -fx-border: none;
+    -fx-border-radius: 0;
+
 }

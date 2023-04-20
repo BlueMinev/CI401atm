@@ -1,14 +1,17 @@
 #BlueJ class context
 comment0.target=BankAccount
+comment0.text=\r\n\ BankAccount\ class\r\n\ This\ class\ has\ instance\ variables\ for\ the\ account\ number,\ password\ and\ balance,\ and\ methods\r\n\ to\ withdraw,\ deposit,\ check\ balance\ etc.\r\n
 comment1.params=
 comment1.target=BankAccount()
 comment2.params=a\ p\ b
 comment2.target=BankAccount(int,\ int,\ int)
 comment3.params=amount
 comment3.target=boolean\ withdraw(int)
+comment3.text=\r\n\ withdraw\ money\ from\ the\ account.\ Return\ true\ if\ successful,\ or\ \r\n\ false\ if\ the\ amount\ is\ negative,\ or\ less\ than\ the\ amount\ in\ the\ account\r\n
 comment4.params=amount
 comment4.target=boolean\ deposit(int)
+comment4.text=\r\n\ deposit\ the\ amount\ of\ money\ into\ the\ account.\ Return\ true\ if\ successful,\r\n\ or\ false\ if\ the\ amount\ is\ negative\ \r\n
 comment5.params=
 comment5.target=int\ getBalance()
+comment5.text=\r\n\ Return\ the\ current\ balance\ in\ the\ account\r\n
 numComments=6
-

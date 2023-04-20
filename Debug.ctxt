@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Debug
-comment0.text=\r\n\ Print\ information\ about\ the\ running\ program\r\n\ @author\ Mike\ Smith\ University\ of\ Brighton\r\n\ @version\ 1.0\r\n
+comment0.text=\r\n\ Print\ information\ about\ the\ running\ program\r\n
 comment1.params=state
 comment1.target=boolean\ set(boolean)
 comment1.text=\r\n\ Set\ true/false\ to\ print\ debugging\ information\r\n\ @param\ state\ Debugging\ true\ false\r\n\ @return\ The\ old\ state\r\n

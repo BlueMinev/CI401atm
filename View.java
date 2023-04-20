@@ -1,10 +1,4 @@
-// The View class creates and manages the GUI for the application.
-// It doesn't know anything about the ATM itself, it just displays
-// the current state of the Model, (title, output1 and output2), 
-// and handles user input from the buttonsand handles user input
 
-// We import lots of JavaFX libraries (we may not use them all, but it
-// saves us having to thinkabout them if we add new code)
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,20 +7,48 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 import javafx.util.*;
 
+/**
+ * Creates and manages the GUI,displays the current state of the Model (title, output1 and output2) and handles user input from buttons
+ */
 class View
 {
-    int H = 559;         // Height of window pixels 
-    int W = 565;         // Width  of window pixels 
+    /**
+     * Height of window pixels
+     */
+    int H = 559;
+    /**
+     * Width of window pixels
+     */
+    int W = 565; 
 
     // variables for components of the user interface
-    Label      title;         // Title area (not the window title)
-    TextField  message;       // Message area, where numbers appear
-    TextArea   reply;         // Reply area where results or info are shown
-    ScrollPane scrollPane;    // scrollbars around the TextArea object  
-    GridPane   grid;          // main layout grid
-    TilePane   buttonPane;    // tiled area for buttons
+    /**
+     * Title area (not the window title)
+     */
+    Label      title; 
+    /**
+     * Message area, where numbers appear
+     */
+    TextField  message; 
+    /**
+     *  Reply area where results or information is shown
+     */
+    TextArea   reply; 
+    /**
+     * scrollbars around the TextArea object
+     */
+    ScrollPane scrollPane;
+    /**
+     * main layout grid
+     */
+    GridPane   grid; 
+    /**
+     * tiled area for buttons
+     */
+    TilePane   buttonPane;
 
     // The other parts of the model-view-controller setup
+    
     public Model model;
     public Controller controller;
 
@@ -36,11 +58,12 @@ class View
     {
         Debug.trace("View::<constructor>");
     }
-
-    // start is called from Main, to start the GUI up
-    // Note that it is important to create controls etc here and
-    // not in the constructor (or as initialisations to instance variables),
-    // because we need things to be initialised in the right order
+    
+    /**
+     * Start the GUI up <br>
+     * called from Main<br>
+     * important to create controls etc here and not in the constructor as we need things to be initialised in the correct order
+     */
     public void start(Stage window)
     {
         Debug.trace("View::start");
@@ -114,6 +137,10 @@ class View
     // This is how the View talks to the Controller
     // This method is called when a button is pressed
     // It fetches the label on the button and passes it to the controller's process method
+    /**
+     * Fetched the label on the button and passes it to the controller's proccess method <br>
+     * this is how the view talks to the controller
+     */
     public void buttonClicked(ActionEvent event) {
         // this line asks the event to provide the actual Button object that was clicked
         Button b = ((Button) event.getSource());
@@ -130,6 +157,9 @@ class View
     // This method gets called BY THE MODEL, whenever the model changes
     // It fetches th title, display1 and display2 variables from the model
     // and displays them in the GUI
+    /**
+     * Called by the model whenever the model changes, fethches the title, dispaly 1&2 and displays them
+     */
     public void update()
     {        
         if (model != null) {

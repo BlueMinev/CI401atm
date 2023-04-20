@@ -1,8 +1,6 @@
 /**
  * Print information about the running program
- * @author Mike Smith University of Brighton
- * @version 1.0
- */
+*/
 
 public class Debug
 {

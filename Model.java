@@ -1,9 +1,11 @@
+/**
+ * Model represents all the content and functionality of the app such as: <br>
+ * keeping track of the information shown in the display and the interaction with the bank <br>
+ * executing commands provided by the controller <br>
+ * telling the view to update when something changes
+ * 
+ */
 
-// The model represents all the actual content and functionality of the app
-// For the ATM, it keeps track of the information shown in the display
-// (the title and two message boxes), and the interaction with the bank, executes
-// commands provided by the controller and tells the view to update when
-// something changes
 public class Model 
 {
     // the ATM model is always in one of three states - waiting for an account number, 
@@ -29,16 +31,23 @@ public class Model
     public View view;
     public Controller controller;
 
-    // Model constructor - we pass it a Bank object representing the bank we want to talk to
+    
+    /**
+     * model constrctor
+     * @param b a bank object representing the bank we want to talk to
+     */
     public Model(Bank b)
     {
         Debug.trace("Model::<constructor>");          
         bank = b;
     }
 
-    // Initialising the ATM (or resetting after an error or logout)
-    // set state to ACCOUNT_NO, number to zero, and display message 
-    // provided as argument and standard instruction message
+
+    /**
+     * initialising or resetting the ATM
+     * @param message the message to be displayed on display1 
+     * sets state to ACCOUNT_NO, number to 0 and displays messages in the 2 displays
+     */
     public void initialise(String message) {
         setState(ACCOUNT_NO);
         number = 0;
@@ -47,8 +56,11 @@ public class Model
         "Followed by \"Ent\"";
     }
 
-    // use this method to change state - mainly so we print a debugging message whenever 
-    //the state changes
+
+    /**
+     * This method changes the state and prints a debug message
+     * @param newState the new state we want to change to
+     */
     public void setState(String newState) 
     {
         if ( !state.equals(newState) ) 
@@ -62,7 +74,11 @@ public class Model
     // These methods are called by the Controller to change the Model
     // when particular buttons are pressed on the GUI
     
-    // process a number key (the key is specified by the label argument)
+    
+    /**
+     * processes a number key press
+     * @param label the number pressed
+     */
     public void processNumber(String label)
     {
         // a little magic to turn the first char of the label into an int
@@ -74,7 +90,10 @@ public class Model
         display();  // update the GUI
     }
 
-    // process the Clear button - reset the number (and number display string)
+    
+    /**
+     * processes the clear button by ressetting the number and display string
+     */
     public void processClear()
     {
         // clear the number stored in the model
@@ -83,10 +102,10 @@ public class Model
         display();  // update the GUI
     }
 
-    // process the Enter button
-    // this is the most complex operation - the Enter key causes the ATM to change state
-    // from account number, to password, to logged_in and back to account number
-    // (when you log out)
+    /**
+     * processes the enter button from account number to passowrd to logged in and back to account number by using a stitch case statement to go 
+     * through all possible states` 
+     */
     public void processEnter()
     {
         // Enter was pressed - what we do depends what state the ATM is already in
@@ -128,8 +147,13 @@ public class Model
         display();  // update the GUI
     }
 
-    // Withdraw button - check we are logged in and if so try and withdraw some money from
-    // the bank (number is the amount showing in the interface display)
+
+    
+    /**
+     * processes the withdraw button <br> 
+     * checks if user is logged in <br>
+     * if user is logged in run bank.withdraw(number) and display the outcome
+     */
     public void processWithdraw()
     {
         if (state.equals(LOGGED_IN) ) {            
@@ -147,8 +171,12 @@ public class Model
         display();  // update the GUI
     }
 
-    // Deposit button - check we are logged in and if so try and deposit some money into
-    // the bank (number is the amount showing in the interface display)
+    
+    /**
+     * processes the deposit button <br> 
+     * checks if user is logged in <br>
+     * if user is logged in run bank.deposit(number) and display the outcome
+     */
     public void processDeposit()
     {
         if (state.equals(LOGGED_IN) ) {
@@ -162,8 +190,11 @@ public class Model
         display();  // update the GUI
     }
 
-    // Balance button - check we are logged in and if so access the current balance
-    // and display it
+
+    /**
+     * process balance button <br>
+     * checks user is logged in then runs bank.getBalance() and dispalys it to the user in the GUI
+     */
     public void processBalance()
     {
         if (state.equals(LOGGED_IN) ) {
@@ -175,7 +206,10 @@ public class Model
         display();  // update the GUI
     }
 
-    // Finish button - check we are logged in and if so log out
+    /**
+     * proccesses the finish button <br>
+     * is user is logged in, log the user out and reset all values back to the beginning
+     */
     public void processFinish()
     {
         if (state.equals(LOGGED_IN) ) {
@@ -190,7 +224,10 @@ public class Model
         display();  // update the GUI
     }
 
-    // Any other key results in an error message and a reset of the GUI
+    /**
+     * Catch all for any unknown button presses <br>
+     * resets the GUI and sends out an error message
+     */
     public void processUnknownKey(String action)
     {
         // unknown button, or invalid for this state - reset everything
@@ -200,8 +237,10 @@ public class Model
         display();
     }
 
-    // This is where the Model talks to the View, by calling the View's update method
-    // The view will call back to the model to get new information to display on the screen
+
+    /**
+     * model talks to the view to update the gui
+     */
     public void display()
     {
         Debug.trace("Model::display");

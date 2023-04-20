@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Main
+comment0.text=\r\n\ ATM\ main\ class.\ Creates\ the\ GUI\ interface\ and\ model\ functionality.\r\n\ @author\ Blue\ Minev,\ University\ of\ Brighton\r\n\ @version\ 1.0\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=window
 comment2.target=void\ start(javafx.stage.Stage)
+comment2.text=\r\n\ This\ method\ creates\ the\ bank\ object,\ as\ well\ as\ creating\ the\ model\ view\ and\ controller\ objects.\ It\ then\ starts\ us\ the\ GUI\ (view)\ \r\n\ and\ tells\ it\ to\ initilaise\ and\ display\ itself\ \r\n\ @param\ creates\ a\ stage\ and\ calls\ it\ window\r\n
 numComments=3
-

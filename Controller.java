@@ -1,7 +1,6 @@
-
-// The ATM controller is quite simple - the process method is passed
-// the label on the button that was pressed, and it calls different
-// methods in the model depending what was pressed.
+/**
+ *  Calls different methods based on what button was pressed
+ */
 public class Controller
 {
     public Model model;
@@ -14,11 +13,10 @@ public class Controller
         Debug.trace("Controller::<constructor>");
     }
 
-    // This is how the View talks to the Controller
-    // AND how the Controller talks to the Model
-    // This method is called by the View to respond to some user interface event
-    // The controller's job is to decide what to do. In this case it uses a switch 
-    // statement to select the right method in the Model
+    /**
+     * Called by the View to srespond to a user interface event, controller decides what to do using
+     * a switch statement then calls a method in the Model
+     */
     public void process( String action )
     {
         Debug.trace("Controller::process: action = " + action);

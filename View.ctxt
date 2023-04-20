@@ -1,13 +1,15 @@
-
 #BlueJ class context
 comment0.target=View
+comment0.text=\r\n\ Creates\ and\ manages\ the\ GUI,displays\ the\ current\ state\ of\ the\ Model\ (title,\ output1\ and\ output2)\ and\ handles\ user\ input\ from\ buttons\r\n
 comment1.params=
 comment1.target=View()
 comment2.params=window
 comment2.target=void\ start(javafx.stage.Stage)
+comment2.text=\r\n\ Start\ the\ GUI\ up\ <br>\r\n\ called\ from\ Main<br>\r\n\ important\ to\ create\ controls\ etc\ here\ and\ not\ in\ the\ constructor\ as\ we\ need\ things\ to\ be\ initialised\ in\ the\ correct\ order\r\n
 comment3.params=event
 comment3.target=void\ buttonClicked(javafx.event.ActionEvent)
+comment3.text=\r\n\ Fetched\ the\ label\ on\ the\ button\ and\ passes\ it\ to\ the\ controller's\ proccess\ method\ <br>\r\n\ this\ is\ how\ the\ view\ talks\ to\ the\ controller\r\n
 comment4.params=
 comment4.target=void\ update()
+comment4.text=\r\n\ Called\ by\ the\ model\ whenever\ the\ model\ changes,\ fethches\ the\ title,\ dispaly\ 1&2\ and\ displays\ them\r\n
 numComments=5
-

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #BlueJ class context
 comment0.target=Main
 comment1.params=args
@@ -6,12 +5,4 @@ comment1.target=void\ main(java.lang.String[])
 comment2.params=window
 comment2.target=void\ start(javafx.stage.Stage)
 numComments=3
-=======
-#BlueJ class context
-comment0.target=Main
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment2.params=window
-comment2.target=void\ start(javafx.stage.Stage)
-numComments=3
->>>>>>> 7a83cf6 (test)
+

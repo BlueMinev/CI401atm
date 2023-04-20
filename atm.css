@@ -1,0 +1,41 @@
+#Layout {
+    -fx-grid-lines-visible: false;
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+    -fx-padding: 10;
+}
+
+#Buttons {
+    -fx-pref-columns: 6;
+    -fx-pref-tile-width: 75;
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+
+}
+
+.button {
+    -fx-font: bold 15pt "Roboto";
+    -fx-background-color: #778DA9;
+    -fx-border-color: #778DA9;
+    -fx-pref-width: 200;
+    -fx-text-fill: #F8F8F7;
+    -fx-cursor: pointer;
+
+}
+
+#message{
+    -fx-border-color: #778DA9;
+}
+
+#reply{
+    -fx-border-color: #778DA9;
+}
+
+#title{
+    -fx-font: bold 15pt "Roboto";
+}
+
+.root{
+    -fx-font: 10pt "Roboto";
+    -fx-background-color: #E0E1DD;
+}

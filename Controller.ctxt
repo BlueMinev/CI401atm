@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #BlueJ class context
 comment0.target=Controller
 comment1.params=
@@ -5,3 +6,12 @@ comment1.target=Controller()
 comment2.params=action
 comment2.target=void\ process(java.lang.String)
 numComments=3
+=======
+#BlueJ class context
+comment0.target=Controller
+comment1.params=
+comment1.target=Controller()
+comment2.params=action
+comment2.target=void\ process(java.lang.String)
+numComments=3
+>>>>>>> 7a83cf6 (test)

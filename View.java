@@ -103,7 +103,7 @@ class View
         // The number of button per row should match what is set in 
         // the css file
         String labels[][] = {
-                {"7",    "8",  "9",  "",  "Dep",  ""},
+                {"7",    "8",  "9",  "",  "Dep",  "NPin"},
                 {"4",    "5",  "6",  "",  "W/D",  ""},
                 {"1",    "2",  "3",  "",  "Bal",  "Fin"},
                 {"CLR",  "0",  "",   "",  "",     "Ent"} };

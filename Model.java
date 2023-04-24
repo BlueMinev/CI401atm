@@ -223,6 +223,20 @@ public class Model
         }
         display();  // update the GUI
     }
+    
+    /**
+     * processes the new pin button <br>
+     * if the user is logged in, changes the pin and changes the display
+     */
+    public void processNewPin (){
+        if (state.equals(LOGGED_IN) ) {
+                int newPin = bank.changePin(number);
+            display2 = "your new pin is " + newPin;
+        } else {
+            initialise("You are not logged in");
+        }
+        display();
+    }
 
     /**
      * Catch all for any unknown button presses <br>

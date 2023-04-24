@@ -139,14 +139,25 @@ public class Bank
         }
     }
     
-
     /**
-     *     get the account balance (by calling the balance method on the BankAccount object)
+     * get the account balance (by calling the balance method on the BankAccount object)
      */
     public int getBalance() 
     {
         if (loggedIn()) {
             return account.getBalance();   
+        } else {
+            return -1; // use -1 as an indicator of an error
+        }
+    }
+    
+    /**
+     * change the pin by calling the new pin method
+     */
+    public int changePin(int number) 
+    {
+        if (loggedIn()) {
+            return account.newPin(number);   
         } else {
             return -1; // use -1 as an indicator of an error
         }

@@ -60,4 +60,12 @@ public class BankAccount
 
         return balance;
     }
+    
+    /**
+     * Change the password and then return the new password
+     */
+    public int newPin(int number){
+        accPasswd = number;
+        return accPasswd;
+    }
 }

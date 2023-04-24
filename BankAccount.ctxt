@@ -14,4 +14,6 @@ comment4.text=\r\n\ deposit\ the\ amount\ of\ money\ into\ the\ account.\ Return
 comment5.params=
 comment5.target=int\ getBalance()
 comment5.text=\r\n\ Return\ the\ current\ balance\ in\ the\ account\r\n
-numComments=6
+comment6.params=number
+comment6.target=int\ newPin(int)
+numComments=7

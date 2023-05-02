@@ -10,7 +10,7 @@ public class BankAccount
     public int accPasswd = 0;
     public int balance = 0;
     Stack<String> statement = new Stack<String>();
-    //StringBuilder statement = new StringBuilder();
+    int count = 0;
     
     public BankAccount()
     {
@@ -36,6 +36,11 @@ public class BankAccount
         } else {
             int prevBalance = balance;
             balance = balance - amount;  // subtract amount from balance
+            if (count>5){
+                statement.pop(int 0);
+                count --;
+            }
+            count ++; 
             statement.push("WITHDRAW: \n Balance before: "+ prevBalance + 
             " \n Amount withdrawn: "+ amount + " \n New balance: " + balance + "\n \n");
             return true; 
@@ -55,11 +60,17 @@ public class BankAccount
         } else {
             int prevBalance = balance;
             balance = balance + amount;  // add amount to balance
+            if (count >5){
+                statement.pop(int 0);
+                count --;
+            }
+            count ++ ; 
             statement.push("DEPOSIT: \n Balance before: "+ prevBalance + 
             " \n Amount deposited: "+ amount + " \n New balance: " + balance + "\n \n");
             return true; 
         }
-    }
+        }
+    
     /**
     * Return the current balance in the account
     */

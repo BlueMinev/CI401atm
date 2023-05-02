@@ -8,6 +8,7 @@ public class BankAccount
     public int accNumber = 0;
     public int accPasswd = 0;
     public int balance = 0;
+    StringBuilder statement = new StringBuilder();
     
     public BankAccount()
     {
@@ -31,7 +32,10 @@ public class BankAccount
         if (amount < 0 || balance < amount) {
             return false;
         } else {
+            int prevBalance = balance;
             balance = balance - amount;  // subtract amount from balance
+            statement.append("WITHDRAW: \n Balance before: "+ prevBalance + 
+            " \n Amount withdrawn: "+ amount + " \n New balance: " + balance + "\n \n");
             return true; 
         }
     }
@@ -47,7 +51,10 @@ public class BankAccount
         if (amount < 0) {
             return false;
         } else {
+            int prevBalance = balance;
             balance = balance + amount;  // add amount to balance
+            statement.append("DEPOSIT: \n Balance before: "+ prevBalance + 
+            " \n Amount deposited: "+ amount + " \n New balance: " + balance + "\n \n");
             return true; 
         }
     }
@@ -65,6 +72,7 @@ public class BankAccount
      * Change the password and then return the new password
      */
     public int newPin(int number){
+        Debug.trace( "LocalBank::newPin" );
         accPasswd = number;
         return accPasswd;
     }
@@ -74,8 +82,9 @@ public class BankAccount
      */
     public String statement(){
         //do stuff
-        Debug.trace( "making statement" );
-        return "test";
+        Debug.trace( "LocalBank::statement" );
+        String finalStatement = statement.toString();
+        return finalStatement;
         
     }
 }

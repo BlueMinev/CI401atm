@@ -255,7 +255,7 @@ public class Model
      * Catch all for any unknown button presses <br>
      * resets the GUI and sends out an error message
      */
-    public void processStatement(String action)
+    public void processStatement()
     {
         if (state.equals(LOGGED_IN) ) {
             String Statement = bank.getStatement();

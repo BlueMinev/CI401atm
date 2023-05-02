@@ -68,4 +68,14 @@ public class BankAccount
         accPasswd = number;
         return accPasswd;
     }
+    
+        /**
+     * Change the password and then return the new password
+     */
+    public String statement(){
+        //do stuff
+        Debug.trace( "making statement" );
+        return "test";
+        
+    }
 }

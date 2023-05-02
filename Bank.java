@@ -159,4 +159,15 @@ public class Bank
             return -1; // use -1 as an indicator of an error
         }
     }
+    /**
+     * change the pin by calling the new pin method
+     */
+    public String getStatement() 
+    {
+        if (loggedIn()) {
+            return account.statement();   
+        } else {
+            return ""; // use -1 as an indicator of an error
+        }
+    }
 }

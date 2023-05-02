@@ -46,6 +46,9 @@ public class Controller
         case "NPin":
             model.processNewPin();
             break;
+        case "Stmt":
+            model.processStatement();
+            break;
         default:
             model.processUnknownKey(action);
             break;

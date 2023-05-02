@@ -9,6 +9,7 @@ comment10.target=void\ processFinish()
 comment10.text=\r\n\ proccesses\ the\ finish\ button\ <br>\r\n\ is\ user\ is\ logged\ in,\ log\ the\ user\ out\ and\ reset\ all\ values\ back\ to\ the\ beginning\r\n
 comment11.params=
 comment11.target=void\ processNewPin()
+comment11.text=\r\n\ processes\ the\ new\ pin\ button\ <br>\r\n\ if\ the\ user\ is\ logged\ in,\ changes\ the\ pin\ and\ changes\ the\ display\r\n
 comment12.params=action
 comment12.target=void\ processUnknownKey(java.lang.String)
 comment12.text=\r\n\ Catch\ all\ for\ any\ unknown\ button\ presses\ <br>\r\n\ resets\ the\ GUI\ and\ sends\ out\ an\ error\ message\r\n

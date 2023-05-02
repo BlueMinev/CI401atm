@@ -15,9 +15,7 @@ public class Bank
     // Constructor method - this provides a couple of example bank accounts to work with
     public Bank()
     {
-        Debug.trace( "Bank::<constructor>"); 
-
-        
+        Debug.trace( "Bank::<constructor>");  
     }
 
 

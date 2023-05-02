@@ -250,6 +250,22 @@ public class Model
         initialise("Invalid command");
         display();
     }
+    
+        /**
+     * Catch all for any unknown button presses <br>
+     * resets the GUI and sends out an error message
+     */
+    public void processStatement(String action)
+    {
+        if (state.equals(LOGGED_IN) ) {
+            String Statement = bank.getStatement();
+            display2 = Statement;
+        } else {
+            initialise("You are not logged in");
+        }
+        display();
+    }
+
 
 
     /**

@@ -16,5 +16,6 @@ comment5.target=int\ getBalance()
 comment5.text=\r\n\ Return\ the\ current\ balance\ in\ the\ account\r\n
 comment6.params=number
 comment6.target=int\ newPin(int)
+comment6.text=\r\n\ Change\ the\ password\ and\ then\ return\ the\ new\ password\r\n
 numComments=7
 

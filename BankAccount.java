@@ -1,3 +1,4 @@
+import java.util.*;
 /**
 * BankAccount class
 * This class has instance variables for the account number, password and balance, and methods
@@ -8,16 +9,21 @@ public class BankAccount
     public int accNumber = 0;
     public int accPasswd = 0;
     public int balance = 0;
+    public boolean overdraft = false;
+    LinkedList<String> statement = new LinkedList<String>();
+    int count = 0;
+
     
     public BankAccount()
     {
     }
     
-    public BankAccount(int a, int p, int b)
+    public BankAccount(int a, int p, int b, boolean o)
     {
         accNumber = a;
         accPasswd = p;
         balance = b;
+        overdraft = o;
     }
     
     /**
@@ -28,7 +34,7 @@ public class BankAccount
     { 
         Debug.trace( "BankAccount::withdraw: amount =" + amount ); 
 
-        if (amount < 0 || balance < amount) {
+        if (amount < 0   || (balance < amount && overdraft == false)) {
             return false;
         } else {
             balance = balance - amount;  // subtract amount from balance

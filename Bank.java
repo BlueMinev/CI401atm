@@ -25,9 +25,9 @@ public class Bank
      *    a method to create new BankAccounts - this is known as a 'factory method' and is a more 
      *    flexible way to do it than just using the 'new' keyword directly.
      */
-    public BankAccount makeBankAccount(int accNumber, int accPasswd, int balance) 
+    public BankAccount makeBankAccount(int accNumber, int accPasswd, int balance, boolean overdraft) 
     {
-        return new BankAccount(accNumber, accPasswd, balance);
+        return new BankAccount(accNumber, accPasswd, balance, overdraft);
     }
     
 
@@ -41,7 +41,7 @@ public class Bank
             accounts[numAccounts] = a;
             numAccounts++ ;
             Debug.trace( "Bank::addBankAccount: added " + 
-                         a.accNumber +" "+ a.accPasswd +" £"+ a.balance);
+                         a.accNumber +" "+ a.accPasswd +" £"+ a.balance + " overdraft:" + a.overdraft);
             return true;
         } else {
             Debug.trace( "Bank::addBankAccount: can't add bank account - too many accounts"); 
@@ -55,9 +55,9 @@ public class Bank
      *     Using the same name for this method is called 'method overloading' - two methods 
      *     can have the same name if they take different argument combinations
      */
-    public boolean addBankAccount(int accNumber, int accPasswd, int balance)
+    public boolean addBankAccount(int accNumber, int accPasswd, int balance, boolean overdraft)
     {
-        return addBankAccount(makeBankAccount(accNumber, accPasswd, balance));
+        return addBankAccount(makeBankAccount(accNumber, accPasswd, balance, overdraft));
     }    
     
  

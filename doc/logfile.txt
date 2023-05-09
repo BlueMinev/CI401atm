@@ -20,36 +20,14 @@ C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\doc
 windows-1252
 -charset
 windows-1252
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Controller.java
+C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\View.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Controller.java...
+Loading source file C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\View.java...
 Constructing Javadoc information...
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:142: error: illegal start of type
-<<<<<<< HEAD
-^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:142: error: > expected
-<<<<<<< HEAD
-            ^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:143: error: illegal start of type
-=======
-^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:145: error: malformed floating-point literal
->>>>>>> 048ef14 (added change pin button)
-        ^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:145: error: ';' expected
->>>>>>> 048ef14 (added change pin button)
-                             ^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:145: error: ';' expected
->>>>>>> 048ef14 (added change pin button)
-                                        ^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:145: error: cannot find symbol
->>>>>>> 048ef14 (added change pin button)
-                 ^
-  symbol:   class added
-  location: class Bank
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\Bank.java:145: error: cannot find symbol
->>>>>>> 048ef14 (added change pin button)
-                              ^
-  symbol:   class pin
-  location: class Bank
-8 errors
+C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\BankAccount.java:40: error: '.class' expected
+                statement.pop(int 0);
+                                  ^
+C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\BankAccount.java:64: error: '.class' expected
+                statement.pop(int 0);
+                                  ^
+2 errors

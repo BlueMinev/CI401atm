@@ -21,4 +21,3 @@ comment7.params=
 comment7.target=java.lang.String\ statement()
 comment7.text=\r\n\ converts\ the\ stringBuilder\ variable\ to\ a\ string\ \r\n
 numComments=8
-

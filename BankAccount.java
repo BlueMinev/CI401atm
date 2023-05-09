@@ -9,7 +9,7 @@ public class BankAccount
     public int accNumber = 0;
     public int accPasswd = 0;
     public int balance = 0;
-    Stack<String> statement = new Stack<String>();
+    LinkedList<String> statement = new LinkedList<String>();
     int count = 0;
     
     public BankAccount()
@@ -36,13 +36,13 @@ public class BankAccount
         } else {
             int prevBalance = balance;
             balance = balance - amount;  // subtract amount from balance
-            if (count>5){
-                statement.pop(int 0);
+            if (count>4){
+                statement.removeFirst();
                 count --;
             }
             count ++; 
-            statement.push("WITHDRAW: \n Balance before: "+ prevBalance + 
-            " \n Amount withdrawn: "+ amount + " \n New balance: " + balance + "\n \n");
+            statement.add(new String ("WITHDRAW: \n Balance before: "+ prevBalance + 
+            " \n Amount withdrawn: "+ amount + " \n New balance: " + balance + "\n \n"));
             return true; 
         }
     }
@@ -60,13 +60,13 @@ public class BankAccount
         } else {
             int prevBalance = balance;
             balance = balance + amount;  // add amount to balance
-            if (count >5){
-                statement.pop(int 0);
+            if (count >4){
+                statement.removeFirst();
                 count --;
             }
             count ++ ; 
-            statement.push("DEPOSIT: \n Balance before: "+ prevBalance + 
-            " \n Amount deposited: "+ amount + " \n New balance: " + balance + "\n \n");
+            statement.add(new String ("DEPOSIT: \n Balance before: "+ prevBalance + 
+            " \n Amount deposited: "+ amount + " \n New balance: " + balance + "\n \n"));
             return true; 
         }
         }

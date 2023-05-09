@@ -7,4 +7,3 @@ comment2.params=action
 comment2.target=void\ process(java.lang.String)
 comment2.text=\r\n\ Called\ by\ the\ View\ to\ srespond\ to\ a\ user\ interface\ event,\ controller\ decides\ what\ to\ do\ using\r\n\ a\ switch\ statement\ then\ calls\ a\ method\ in\ the\ Model\r\n
 numComments=3
-

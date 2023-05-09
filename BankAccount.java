@@ -1,3 +1,4 @@
+import java.util.*;
 /**
 * BankAccount class
 * This class has instance variables for the account number, password and balance, and methods
@@ -8,6 +9,8 @@ public class BankAccount
     public int accNumber = 0;
     public int accPasswd = 0;
     public int balance = 0;
+    LinkedList<String> statement = new LinkedList<String>();
+    int count = 0;
     
     public BankAccount()
     {
@@ -31,7 +34,15 @@ public class BankAccount
         if (amount < 0 || balance < amount) {
             return false;
         } else {
+            int prevBalance = balance;
             balance = balance - amount;  // subtract amount from balance
+            if (count>4){
+                statement.removeFirst();
+                count --;
+            }
+            count ++; 
+            statement.add(new String ("WITHDRAW: \n Balance before: "+ prevBalance + 
+            " \n Amount withdrawn: "+ amount + " \n New balance: " + balance + "\n \n"));
             return true; 
         }
     }
@@ -47,10 +58,19 @@ public class BankAccount
         if (amount < 0) {
             return false;
         } else {
+            int prevBalance = balance;
             balance = balance + amount;  // add amount to balance
+            if (count >4){
+                statement.removeFirst();
+                count --;
+            }
+            count ++ ; 
+            statement.add(new String ("DEPOSIT: \n Balance before: "+ prevBalance + 
+            " \n Amount deposited: "+ amount + " \n New balance: " + balance + "\n \n"));
             return true; 
         }
-    }
+        }
+    
     /**
     * Return the current balance in the account
     */
@@ -65,7 +85,18 @@ public class BankAccount
      * Change the password and then return the new password
      */
     public int newPin(int number){
+        Debug.trace( "LocalBank::newPin" );
         accPasswd = number;
         return accPasswd;
+    }
+    
+        /**
+     * converts the stringBuilder variable to a string 
+     */
+    public String statement(){
+        Debug.trace( "LocalBank::statement" );
+        String finalStatement = "Your statement is : \n" + statement;
+        Debug.trace(finalStatement);
+        return finalStatement;
     }
 }

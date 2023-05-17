@@ -10,6 +10,7 @@ public class BankAccount
     public int accPasswd = 0;
     public int balance = 0;
     public boolean overdraft = false;
+    public int limit = 0;
     LinkedList<String> statement = new LinkedList<String>();
     int count = 0;
 
@@ -18,12 +19,13 @@ public class BankAccount
     {
     }
     
-    public BankAccount(int a, int p, int b, boolean o)
+    public BankAccount(int a, int p, int b, boolean o, int l)
     {
         accNumber = a;
         accPasswd = p;
         balance = b;
         overdraft = o;
+        limit = l;
     }
     
     /**
@@ -34,7 +36,7 @@ public class BankAccount
     { 
         Debug.trace( "BankAccount::withdraw: amount =" + amount ); 
 
-        if (amount < 0   || ((balance < amount) && overdraft == false)) {
+        if (amount < 0   || ((balance < amount) && (overdraft == false) && (balance - amount) >=limit)) {
             return false;
         } else {
             balance = balance - amount;  // subtract amount from balance

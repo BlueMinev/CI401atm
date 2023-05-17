@@ -34,7 +34,7 @@ public class BankAccount
     { 
         Debug.trace( "BankAccount::withdraw: amount =" + amount ); 
 
-        if (amount < 0   || (balance < amount && overdraft == false)) {
+        if (amount < 0   || ((balance < amount) && overdraft == false)) {
             return false;
         } else {
             balance = balance - amount;  // subtract amount from balance

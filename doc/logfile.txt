@@ -24,10 +24,15 @@ C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\View
 <---- end of javadoc command ---->
 Loading source file C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\View.java...
 Constructing Javadoc information...
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\BankAccount.java:40: error: '.class' expected
-                statement.pop(int 0);
-                                  ^
-C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\BankAccount.java:64: error: '.class' expected
-                statement.pop(int 0);
-                                  ^
-2 errors
+Standard Doclet version 17.0.4+8
+Building tree for all the packages and classes...
+Generating C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\doc\View.html...
+C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\View.java:161: warning: invalid input: '&'
+     * Called by the model whenever the model changes, fethches the title, dispaly 1&2 and displays them
+                                                                                    ^
+C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\View.java:161: warning: invalid input: '&'
+     * Called by the model whenever the model changes, fethches the title, dispaly 1&2 and displays them
+                                                                                    ^
+Generating C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\doc\package-summary.html...
+Generating C:\Users\invate\OneDrive - University of Brighton\Documents\GitHub\CI401atm\doc\index.html...
+2 warnings

@@ -23,9 +23,9 @@ public class Bank
      *    a method to create new BankAccounts - this is known as a 'factory method' and is a more 
      *    flexible way to do it than just using the 'new' keyword directly.
      */
-    public BankAccount makeBankAccount(int accNumber, int accPasswd, int balance) 
+    public BankAccount makeBankAccount(int accNumber, int accPasswd, int balance, boolean overdraft, int limit) 
     {
-        return new BankAccount(accNumber, accPasswd, balance);
+        return new BankAccount(accNumber, accPasswd, balance, overdraft,limit);
     }
     
 
@@ -39,7 +39,7 @@ public class Bank
             accounts[numAccounts] = a;
             numAccounts++ ;
             Debug.trace( "Bank::addBankAccount: added " + 
-                         a.accNumber +" "+ a.accPasswd +" £"+ a.balance);
+                         a.accNumber +" "+ a.accPasswd +" £"+ a.balance + " overdraft:" + a.overdraft + " limit:"+ a.limit);
             return true;
         } else {
             Debug.trace( "Bank::addBankAccount: can't add bank account - too many accounts"); 
@@ -53,9 +53,9 @@ public class Bank
      *     Using the same name for this method is called 'method overloading' - two methods 
      *     can have the same name if they take different argument combinations
      */
-    public boolean addBankAccount(int accNumber, int accPasswd, int balance)
+    public boolean addBankAccount(int accNumber, int accPasswd, int balance, boolean overdraft, int limit)
     {
-        return addBankAccount(makeBankAccount(accNumber, accPasswd, balance));
+        return addBankAccount(makeBankAccount(accNumber, accPasswd, balance, overdraft,limit));
     }    
     
  
@@ -74,13 +74,22 @@ public class Bank
         // If you don't find it, reset everything and return false
         
         for (BankAccount b: accounts) {
-            if (b.accNumber == newAccNumber && b.accPasswd == newAccPasswd) {
-                // found the right account
-                Debug.trace( "Bank::login: logged in, accNumber = " + newAccNumber ); 
-                account = b;
-                return true;
-            }
-        }    
+                    Debug.trace( "Bank::login: made to for loop"); 
+                    try{
+                        if (b.accNumber == newAccNumber && b.accPasswd == newAccPasswd) {
+                            // found the right account
+                            Debug.trace( "Bank::login: logged in, accNumber = " + newAccNumber ); 
+                            account = b;
+                            return true;
+                        }
+                        else{
+                            Debug.trace( "Bank::login:  " + b + "does not match"); 
+                        }
+                    }
+                    catch(NullPointerException e){
+                        return false;
+                    }
+                }   
 
         // not found - return false
         account = null;

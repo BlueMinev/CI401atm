@@ -15,9 +15,7 @@ public class Bank
     // Constructor method - this provides a couple of example bank accounts to work with
     public Bank()
     {
-        Debug.trace( "Bank::<constructor>"); 
-
-        
+        Debug.trace( "Bank::<constructor>");  
     }
 
 
@@ -147,7 +145,6 @@ public class Bank
             return false;
         }
     }
-    
     /**
      * get the account balance (by calling the balance method on the BankAccount object)
      */
@@ -169,6 +166,17 @@ public class Bank
             return account.newPin(number);   
         } else {
             return -1; // use -1 as an indicator of an error
+        }
+    }
+    /**
+     * change the pin by calling the new pin method
+     */
+    public String getStatement() 
+    {
+        if (loggedIn()) {
+            return account.statement();   
+        } else {
+            return ""; // use -1 as an indicator of an error
         }
     }
 }

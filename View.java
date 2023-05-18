@@ -106,7 +106,7 @@ class View
                 {"7",    "8",  "9",  "",  "Dep",  "NPin"},
                 {"4",    "5",  "6",  "",  "W/D",  ""},
                 {"1",    "2",  "3",  "",  "Bal",  "Fin"},
-                {"CLR",  "0",  "",   "",  "",     "Ent"} };
+                {"CLR",  "0",  "",   "",  "Stmt",     "Ent"} };
 
         // loop through the array, making a Button object for each label 
         // (and an empty text label for each blank space) and adding them to the buttonPane

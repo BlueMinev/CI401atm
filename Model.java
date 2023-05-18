@@ -115,7 +115,7 @@ public class Model
                 // we were waiting for a complete account number - save the number we have
                 // reset the tyed in number to 0 and change to the state where we are expecting 
                 // a password
-                        Debug.trace( "Model:: processEnter number:" + number );
+                Debug.trace( "Model:: processEnter number:" + number );
                 accNumber = number;
                 number = 0;
                 setState(PASSWORD);
@@ -233,8 +233,14 @@ public class Model
      */
     public void processNewPin (){
         if (state.equals(LOGGED_IN) ) {
+            if(number!=0){
                 int newPin = bank.changePin(number);
-            display2 = "your new pin is " + newPin;
+                number = 0; 
+                display2 = "Your new pin is " + newPin; 
+            }
+            else{
+                display2 = "Please enter a valid pin before pressing the New Pin Button";
+            }
         } else {
             initialise("You are not logged in");
         }

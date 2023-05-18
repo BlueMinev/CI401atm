@@ -1,6 +1,4 @@
 
-// Bank class - simple implementation of a bank, with a list of bank accounts, an
-// a current account that we are logged in to.
     /**
      * Simple implementation of a bank with a list of bank accounts, a current account and action the user can do
      */
@@ -162,7 +160,7 @@ public class Bank
      */
     public int changePin(int number) 
     {
-        if (loggedIn()) {
+        if (loggedIn() ) {
             return account.newPin(number);   
         } else {
             return -1; // use -1 as an indicator of an error
@@ -176,7 +174,7 @@ public class Bank
         if (loggedIn()) {
             return account.statement();   
         } else {
-            return ""; // use -1 as an indicator of an error
+            return ""; 
         }
     }
 }

@@ -25,10 +25,12 @@
 
 #message{
     -fx-border-color: #778DA9;
+    -fx-font: 10pt "Roboto";
 }
 
 #reply{
     -fx-border-color: #778DA9;
+    -fx-font: 10pt "Roboto";
 }
 
 #title{

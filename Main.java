@@ -1,12 +1,12 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
- 
+
 /**
  * ATM main class. Creates the GUI interface and model functionality.
  * @author Blue Minev, University of Brighton
  * @version 1.0
  */
- 
+
 public class Main extends Application
 {
     public static void main( String args[] )
@@ -16,6 +16,7 @@ public class Main extends Application
         // In BlueJ, BlueJ calls start itself
         launch(args);
     }
+
     /**
      * This method creates the bank object, as well as creating the model view and controller objects. It then starts us the GUI (view) 
      * and tells it to initilaise and display itself 
@@ -27,7 +28,7 @@ public class Main extends Application
         Debug.set(true);             
         Debug.trace("atm starting"); 
         Debug.trace("Main::start"); 
-        
+
         // Create a Bank object for this ATM
         Bank b = new Bank();
         // add some test bank accounts
@@ -43,10 +44,10 @@ public class Main extends Application
         // Each one has instances variable for the other two
         model.view = view;
         model.controller = controller;
-        
+
         controller.model = model;
         controller.view = view;
-        
+
         view.model = model;
         view.controller = controller;
 

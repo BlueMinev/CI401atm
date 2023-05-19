@@ -1,7 +1,7 @@
 
-    /**
-     * Simple implementation of a bank with a list of bank accounts, a current account and action the user can do
-     */
+/**
+ * Simple implementation of a bank with a list of bank accounts, a current account and action the user can do
+ */
 public class Bank
 {
     // Instance variables containing the bank information
@@ -16,7 +16,6 @@ public class Bank
         Debug.trace( "Bank::<constructor>");  
     }
 
-
     /**
      *    a method to create new BankAccounts - this is known as a 'factory method' and is a more 
      *    flexible way to do it than just using the 'new' keyword directly.
@@ -25,7 +24,6 @@ public class Bank
     {
         return new BankAccount(accNumber, accPasswd, balance, overdraft,limit);
     }
-    
 
     /**
      *     a method to add a new bank account to the bank - it returns true if it succeeds
@@ -37,14 +35,13 @@ public class Bank
             accounts[numAccounts] = a;
             numAccounts++ ;
             Debug.trace( "Bank::addBankAccount: added " + 
-                         a.accNumber +" "+ a.accPasswd +" £"+ a.balance + " overdraft:" + a.overdraft + " limit:"+ a.limit);
+                a.accNumber +" "+ a.accPasswd +" £"+ a.balance + " overdraft:" + a.overdraft + " limit:"+ a.limit);
             return true;
         } else {
             Debug.trace( "Bank::addBankAccount: can't add bank account - too many accounts"); 
             return false;
         }                
     }
-    
 
     /**
      *     a variant of addBankAccount which makes the account and adds it all in one go. 
@@ -55,8 +52,7 @@ public class Bank
     {
         return addBankAccount(makeBankAccount(accNumber, accPasswd, balance, overdraft,limit));
     }    
-    
- 
+
     /**
      *    Check whether the current saved account and password correspond to 
      *    an actual bank account, and if so login to it (by setting 'account' to it)
@@ -70,24 +66,24 @@ public class Bank
         // search the array to find a bank account with matching account and password.
         // If you find it, store it in the variable currentAccount and return true.
         // If you don't find it, reset everything and return false
-        
+
         for (BankAccount b: accounts) {
-                    Debug.trace( "Bank::login: made to for loop"); 
-                    try{
-                        if (b.accNumber == newAccNumber && b.accPasswd == newAccPasswd) {
-                            // found the right account
-                            Debug.trace( "Bank::login: logged in, accNumber = " + newAccNumber ); 
-                            account = b;
-                            return true;
-                        }
-                        else{
-                            Debug.trace( "Bank::login:  " + b + "does not match"); 
-                        }
-                    }
-                    catch(NullPointerException e){
-                        return false;
-                    }
-                }   
+            Debug.trace( "Bank::login: made to for loop"); 
+            try{
+                if (b.accNumber == newAccNumber && b.accPasswd == newAccPasswd) {
+                    // found the right account
+                    Debug.trace( "Bank::login: logged in, accNumber = " + newAccNumber ); 
+                    account = b;
+                    return true;
+                }
+                else{
+                    Debug.trace( "Bank::login:  " + b + "does not match"); 
+                }
+            }
+            catch(NullPointerException e){
+                return false;
+            }
+        }   
 
         // not found - return false
         account = null;
@@ -105,6 +101,7 @@ public class Bank
             account = null;
         }
     }
+
     /**
      * test whether the bank is logged in to an account or not
      */
@@ -117,7 +114,6 @@ public class Bank
             return true;
         }
     }   
-    
 
     /**
      *     try to deposit money into the account (by calling the deposit method on the BankAccount object)
@@ -130,8 +126,7 @@ public class Bank
             return false;
         }
     }
-    
- 
+
     /**
      *    try to withdraw money into the account (by calling the withdraw method on the BankAccount object)
      */
@@ -143,6 +138,7 @@ public class Bank
             return false;
         }
     }
+
     /**
      * get the account balance (by calling the balance method on the BankAccount object)
      */
@@ -154,7 +150,7 @@ public class Bank
             return -1; // use -1 as an indicator of an error
         }
     }
-    
+
     /**
      * change the pin by calling the new pin method
      */
@@ -166,6 +162,7 @@ public class Bank
             return -1; // use -1 as an indicator of an error
         }
     }
+
     /**
      * change the pin by calling the new pin method
      */

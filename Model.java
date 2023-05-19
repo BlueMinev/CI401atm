@@ -31,7 +31,6 @@ public class Model
     public View view;
     public Controller controller;
 
-    
     /**
      * model constrctor
      * @param b a bank object representing the bank we want to talk to
@@ -41,7 +40,6 @@ public class Model
         Debug.trace("Model::<constructor>");          
         bank = b;
     }
-
 
     /**
      * initialising or resetting the ATM
@@ -55,7 +53,6 @@ public class Model
         display2 =  "Enter your account number\n" +
         "Followed by \"Ent\"";
     }
-
 
     /**
      * This method changes the state and prints a debug message
@@ -73,8 +70,7 @@ public class Model
 
     // These methods are called by the Controller to change the Model
     // when particular buttons are pressed on the GUI
-    
-    
+
     /**
      * processes a number key press
      * @param label the number pressed
@@ -90,7 +86,6 @@ public class Model
         display();  // update the GUI
     }
 
-    
     /**
      * processes the clear button by ressetting the number and display string
      */
@@ -138,9 +133,9 @@ public class Model
                     display2 = "Accepted\n" +
                     "Now enter the transaction you require";
                 } else {
-  
+
                     initialise("Unknown account/password");
-            
+
                 }
                 break;
             case LOGGED_IN:     
@@ -149,7 +144,6 @@ public class Model
         }  
         display();  // update the GUI
     }
-
 
     
     /**
@@ -174,7 +168,6 @@ public class Model
         display();  // update the GUI
     }
 
-    
     /**
      * processes the deposit button <br> 
      * checks if user is logged in <br>
@@ -192,7 +185,6 @@ public class Model
         }
         display();  // update the GUI
     }
-
 
     /**
      * process balance button <br>
@@ -226,7 +218,7 @@ public class Model
         }
         display();  // update the GUI
     }
-    
+
     /**
      * processes the new pin button <br>
      * if the user is logged in, changes the pin and changes the display
@@ -259,10 +251,10 @@ public class Model
         initialise("Invalid command");
         display();
     }
-    
-        /**
-     * Catch all for any unknown button presses <br>
-     * resets the GUI and sends out an error message
+
+    /**
+     * processes the statement <br>
+     * if the user is logged in, gets the statement and displays it
      */
     public void processStatement()
     {
@@ -274,7 +266,6 @@ public class Model
         }
         display();
     }
-
 
 
     /**
